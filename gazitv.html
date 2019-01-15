@@ -1,0 +1,28 @@
+<!-- head section -->
+<!-- skin -->
+<link rel="stylesheet" href="https://crazynetbd.com/tv/css/skin.css">
+<!-- hls.js -->
+<script src="https://cdn.jsdelivr.net/npm/cdnbye@latest/dist/hls.light.min.js"></script>
+<!-- flowplayer -->
+<script src="https://crazynetbd.com/tv/js/flowplayer.min.js"></script>
+
+<!-- body section -->
+<div id="player"></div>
+
+<script>
+
+    flowplayer('#player', {
+		share: false,
+		fullscreen: true,
+		// iOS allows only native fullscreen from within iframes
+		native_fullscreen: true,
+        live: true,  // set if it's a live stream
+        ratio: 9/16, // set the aspect ratio of the stream
+        clip: {
+            sources: [
+                // path to the HLS m3u8
+                { type: "application/x-mpegurl", src: "http://103.81.104.222/live/GTV/index.m3u8"},
+            ]
+        }
+    });
+</script>
